@@ -1,4 +1,4 @@
-// Package board will content types and logic for handling chess board(s)
+	// Package board will content types and logic for handling chess board(s)
 package board
 
 import (

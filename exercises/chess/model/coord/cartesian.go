@@ -1,5 +1,9 @@
 package coord
 
+import (
+	"fmt"
+)
+
 // Cartesian represent a ser of cartesian coordinates, x and y
 type Cartesian struct{
 	x, y int
@@ -12,9 +16,16 @@ func NewCartesian(x, y int) Cartesian {
 
 // Coord returns x if n==0, y if n==1
 func (c Cartesian) Coord(n int) (int, error){
-	panic("TODO")
+
+	switch n{
+	case 0:
+		return c.y, nil
+	case 1:
+		return c.x, nil
+	}
+	return 0, fmt.Errorf("unknow coord component %d", n)
 }
 
 func (c Cartesian) String() string {
-	panic("TODO")
+	return fmt.Sprintf("%c1", 65 + c.y, c.x + 1)
 }
